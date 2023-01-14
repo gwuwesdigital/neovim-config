@@ -26,16 +26,24 @@ tokyonight.setup {
     lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
 
     -- Change the "hint" color to the "orange" color, and make the "error" color bright red
-    on_colors = function(colors)
-        colors.comment = colors.dark5
-        colors.fg_gutter = colors.dark3
-    end,
+	on_colors = function(colors)
+		colors.comment = colors.dark5
+		colors.fg_gutter = colors.dark3
+		colors.git = { change = colors.cyan, add = colors.green, delete = colors.red }
+		colors.gitSigns = { change = colors.cyan, add = colors.green, delete = colors.red }
+	end,
 
-    on_highlights = function(highlights, colors)
-        highlights.CursorLine = {
-            bg = colors.terminal_black,
-        }
-    end,
+	on_highlights = function(highlights, colors)
+		highlights.CursorLine = {
+			bg = colors.terminal_black,
+		}
+		highlights.CursorLineNr = {
+			fg = colors.fg,
+		}
+		highlights.GitSignsCurrentLineBlame = {
+			fg = colors.fg_dark,
+		}
+	end,
 }
 
 -- Set colorscheme
