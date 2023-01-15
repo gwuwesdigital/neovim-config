@@ -79,10 +79,7 @@ local opts = {
 }
 
 local mappings = {
-	["<space>"] = {
-		"<cmd>Telescope buffers theme=dropdown previewer=false ignore_current_buffer=true sort_lastused=true<cr>",
-		"Buffers",
-	},
+    ["<space>"] = { "<cmd>Telescope buffers<cr>", "Most Recent Files" },
 	["x"] = { "<cmd>bdelete<CR>", "Close Buffer" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["f"] = {
@@ -90,8 +87,7 @@ local mappings = {
 		"Search in Currnt Buffer",
 	},
 	["F"] = { '<cmd>Telescope live_grep_args<cr>', "Search in Current Workspace" },
-	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	-- ["Q"] = { "<cmd>q<CR>", "Quit" },
+	["n"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	-- ["r"] = { "<cmd>%s/<<C-r><C-w>>/<C-r><C-w>/gI<Left><Left><Left><cr>", "Replace" },
 	-- ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 	-- ["x"] = { "<cmd>!chmod +x %<cr>", "Make Executable" },
@@ -104,18 +100,12 @@ local mappings = {
 	["Y"] = "which_key_ignore",
 	["d"] = "which_key_ignore",
 
-	b = {
-		name = "Trouble",
-		q = { "<cmd>Telescope quickfix<cr>", "Open Quickfix List" },
-		l = { "<cmd>Telescope loclist<cr>", "Open Location List" },
-		d = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Add Diagnostic to Quickfix" },
-	},
-
 	g = {
 		name = "Git",
+		g = { "<cmd>Git<cr>", "Git Status" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+		l = { "<cmd>Git blame<cr>", "Blame" },
 		p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
 		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 		R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
@@ -133,14 +123,30 @@ local mappings = {
 		},
 	},
 
+	h = {
+		name = "Harpoon",
+		["1"] = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "which_key_ignore" },
+		["2"] = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "which_key_ignore" },
+		["3"] = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "which_key_ignore" },
+		["4"] = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "which_key_ignore" },
+		["5"] = { "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", "which_key_ignore" },
+		["6"] = { "<cmd>lua require('harpoon.ui').nav_file(6)<cr>", "which_key_ignore" },
+		["7"] = { "<cmd>lua require('harpoon.ui').nav_file(7)<cr>", "which_key_ignore" },
+		["8"] = { "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", "which_key_ignore" },
+		["9"] = { "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", "which_key_ignore" },
+		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add File" },
+		e = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Explorer" },
+		n = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next" },
+		p = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Prev" },
+	},
+
 	l = {
 		name = "LSP",
-		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 		d = {
 			"<cmd>Telescope diagnostics bufnr=0<cr>",
 			"Document Diagnostics",
 		},
-		w = {
+		D = {
 			"<cmd>Telescope diagnostics<cr>",
 			"Workspace Diagnostics",
 		},
@@ -173,21 +179,31 @@ local mappings = {
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
 	},
 
+	q = {
+		name = "Quit",
+		q = { "<cmd>q<CR>", "Current Window" },
+		a = { "<cmd>qa<CR>", "Current All" },
+	},
+
 	s = {
 		name = "Search",
-		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-		C = { "<cmd>Telescope commands<cr>", "Commands" },
+		c = { "<cmd>Telescope commands<cr>", "Commands" },
 		f = { "<cmd>Telescope git_files<cr>", "Git Files" },
 		F = { "<cmd>Telescope find_files<cr>", "Workspace Files" },
 		h = { "<cmd>Telescope help_tags<cr>", "Help" },
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-		m = { "<cmd>Telescope oldfiles<cr>", "Most Recent Files" },
-		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+		m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		r = { "<cmd>Telescope resume<cr>", "Resume Last Search" },
 		R = { "<cmd>Telescope registers<cr>", "Registers" },
-		s = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
 	},
 
+	t = {
+		name = "Troubleshoot",
+		q = { "<cmd>Telescope quickfix<cr>", "Open Quickfix List" },
+		l = { "<cmd>Telescope loclist<cr>", "Open Location List" },
+		d = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Add Diagnostic to Quickfix" },
+		u = { "<cmd>UndotreeToggle<CR>", "UndoTree" },
+	},
 }
 
 which_key.setup(setup)
