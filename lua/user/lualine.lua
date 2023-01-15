@@ -19,16 +19,9 @@ local diagnostics = {
 
 local diff = {
 	"diff",
-	colored = false,
-	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+	colored = true,
+	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
 	cond = hide_in_width,
-}
-
-local mode = {
-	"mode",
-	fmt = function(str)
-		return "-- " .. str .. " --"
-	end,
 }
 
 local filetype = {
@@ -52,7 +45,7 @@ local filename = {
 	-- 2: Absolute path
 	-- 3: Absolute path, with tilde as the home directory
 
-	shorting_target = 80, -- Shortens path to leave 40 spaces in the window
+	shorting_target = 100, -- Shortens path to leave 40 spaces in the window
 	-- for other components. (terrible name, any suggestions?)
 	symbols = {
 		modified = "[+]", -- Text to show when the file is modified.
@@ -77,8 +70,13 @@ local progress = function()
 	return chars[index]
 end
 
-local spaces = function()
-	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+local condaenv = function()
+	local venv = vim.env.CONDA_PROMPT_MODIFIER
+	if venv then
+		return venv
+	else
+		return ""
+	end
 end
 
 lualine.setup({
@@ -87,14 +85,14 @@ lualine.setup({
 		theme = "auto",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
-		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
+		disabled_filetypes = { "NvimTree", "Outline" },
 		always_divide_middle = true,
 	},
 	sections = {
 		lualine_a = { branch, diagnostics, filename },
-		lualine_b = { mode },
+		lualine_b = {},
 		lualine_c = {},
-		lualine_x = { diff, spaces, "encoding", filetype },
+		lualine_x = { { condaenv, color = { fg = "green2", gui = "bold" } }, diff, filetype },
 		lualine_y = { location, "progress" },
 		lualine_z = { progress },
 	},
@@ -107,5 +105,5 @@ lualine.setup({
 		lualine_z = {},
 	},
 	tabline = {},
-	extensions = {},
+	extensions = { "fugitive" },
 })
