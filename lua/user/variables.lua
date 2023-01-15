@@ -5,12 +5,15 @@ vim.g.python3_host_prog = "$HOME/miniconda3/envs/neovim/bin/python"
 vim.g.clipboard = {
 	name = "WslClipboard",
 	copy = {
-		["+"] = "/mnt/c/windows/system32/clip.exe",
-		["*"] = "/mnt/c/windows/system32/clip.exe",
+		["+"] = "clip.exe",
+		["*"] = "clip.exe",
 	},
 	paste = {
-		["+"] = '/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r",""))',
-		["*"] = '/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r",""))',
+		["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r",""))',
+		["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r",""))',
 	},
 	cache_enabled = 0,
 }
+
+-- Prevent C-h C-j C-k C-l moving over the edge
+vim.g.tmux_navigator_no_wrap = 1
