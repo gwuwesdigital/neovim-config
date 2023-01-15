@@ -31,10 +31,17 @@ require("packer").startup(function(use)
 	-- Autocompletion
 	use({
 		"hrsh7th/nvim-cmp",
-		requires = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-nvim-lua", "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip" },
+		requires = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-nvim-lua",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"saadparwaiz1/cmp_luasnip",
+		},
 	})
-	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
-	use({ "hrsh7th/cmp-path" }) -- path completions
+
+	-- Snippets
+	use({ "L3MON4D3/LuaSnip" }) --snippet engine
 	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
 
 	-- Highlight, edit, and navigate code
@@ -50,9 +57,6 @@ require("packer").startup(function(use)
 		after = "nvim-treesitter",
 	})
 
-	-- File tree
-	use("kyazdani42/nvim-tree.lua")
-	use({ "nvim-tree/nvim-web-devicons" })
 
 	-- Git related plugins
 	use("tpope/vim-fugitive")
@@ -62,30 +66,38 @@ require("packer").startup(function(use)
 	-- Colorscheme
 	use("folke/tokyonight.nvim")
 
-	-- Telescope
-	-- Fuzzy Finder (files, lsp, etc)
+    -- Navigation
+	-- 1. Telescope
+	--    Fuzzy Finder (files, lsp, etc)
 	use({
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x",
 		requires = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-live-grep-args.nvim" },
 	})
-	-- Fuzzy Finder Algorithm which requires local dependencies to be built
+	--    Fuzzy Finder Algorithm which requires local dependencies to be built
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+    -- 2. Whichkey
+	use("folke/which-key.nvim") -- Keymap hinter
+    -- 3. Harpoon
+	use("theprimeagen/harpoon") -- Quick navigation between buffers
+    -- 4. File tree
+    use("kyazdani42/nvim-tree.lua")
+    use({ "nvim-tree/nvim-web-devicons" })
 
-	-- Shortcut hinter
-	use("folke/which-key.nvim")
-	-- Undo tree
-	use("mbbill/undotree")
-	-- Quick navigation between buffers
-	use("theprimeagen/harpoon")
-	-- Tmux Vim negvigator
-	use("christoomey/vim-tmux-navigator")
+    -- Other useful plugins
+	use("christoomey/vim-tmux-navigator") -- Tmux Vim negvigator
+	use("mbbill/undotree") -- Undo tree
 	use("nvim-lualine/lualine.nvim") -- Fancier statusline
 	use("lukas-reineke/indent-blankline.nvim") -- Add indentation guides even on blank lines
 	use("numToStr/Comment.nvim") -- "gc" to comment visual regions/lines
 	-- use("tpope/vim-sleuth") -- Detect tabstop and shiftwidth automatically
-	-- Session manager
-	use("tpope/vim-obsession")
+	use("tpope/vim-obsession") -- Session manager
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
 
 	if is_bootstrap then
 		require("packer").sync()
