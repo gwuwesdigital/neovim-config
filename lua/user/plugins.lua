@@ -57,7 +57,6 @@ require("packer").startup(function(use)
 		after = "nvim-treesitter",
 	})
 
-
 	-- Git related plugins
 	use("tpope/vim-fugitive")
 	use("tpope/vim-rhubarb")
@@ -66,7 +65,7 @@ require("packer").startup(function(use)
 	-- Colorscheme
 	use("folke/tokyonight.nvim")
 
-    -- Navigation
+	-- Navigation
 	-- 1. Telescope
 	--    Fuzzy Finder (files, lsp, etc)
 	use({
@@ -76,15 +75,15 @@ require("packer").startup(function(use)
 	})
 	--    Fuzzy Finder Algorithm which requires local dependencies to be built
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-    -- 2. Whichkey
+	-- 2. Whichkey
 	use("folke/which-key.nvim") -- Keymap hinter
-    -- 3. Harpoon
+	-- 3. Harpoon
 	use("theprimeagen/harpoon") -- Quick navigation between buffers
-    -- 4. File tree
-    use("kyazdani42/nvim-tree.lua")
-    use({ "nvim-tree/nvim-web-devicons" })
+	-- 4. File tree
+	use("kyazdani42/nvim-tree.lua")
+	use({ "nvim-tree/nvim-web-devicons" })
 
-    -- Other useful plugins
+	-- Other useful plugins
 	use("christoomey/vim-tmux-navigator") -- Tmux Vim negvigator
 	use("mbbill/undotree") -- Undo tree
 	use("nvim-lualine/lualine.nvim") -- Fancier statusline

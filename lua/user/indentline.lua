@@ -3,15 +3,14 @@ if not status_ok then
 	return
 end
 
-
 -- Enable `lukas-reineke/indent-blankline.nvim`
 -- See `:help indent_blankline.txt`
 indent_blankline.setup({
 	show_current_context = true,
-    char = "▏",
-    show_trailing_blankline_indent = false,
-    show_first_indent_level = true,
-    use_treesitter = true,
+	char = "▏",
+	show_trailing_blankline_indent = false,
+	show_first_indent_level = true,
+	use_treesitter = true,
 	buftype_exclude = { "terminal", "nofile" },
 	filetype_exclude = {
 		"help",

@@ -66,5 +66,5 @@ nvim_tree.setup({
 			},
 		},
 	},
-    remove_keymaps = {"<C-k>"}
+	remove_keymaps = { "<C-k>" },
 })

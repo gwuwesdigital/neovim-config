@@ -79,14 +79,14 @@ local opts = {
 }
 
 local mappings = {
-    ["<space>"] = { "<cmd>Telescope buffers<cr>", "Most Recent Files" },
+	["<space>"] = { "<cmd>Telescope buffers<cr>", "Most Recent Files" },
 	["x"] = { "<cmd>bdelete<CR>", "Close Buffer" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["f"] = {
 		'<cmd>Telescope current_buffer_fuzzy_find theme=ivy layout_config={"height":35}<cr>',
 		"Search in Currnt Buffer",
 	},
-	["F"] = { '<cmd>Telescope live_grep_args<cr>', "Search in Current Workspace" },
+	["F"] = { "<cmd>Telescope live_grep_args<cr>", "Search in Current Workspace" },
 	["n"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	-- ["r"] = { "<cmd>%s/<<C-r><C-w>>/<C-r><C-w>/gI<Left><Left><Left><cr>", "Replace" },
 	-- ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
