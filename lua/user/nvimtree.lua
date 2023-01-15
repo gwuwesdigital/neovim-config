@@ -33,11 +33,11 @@ nvim_tree.setup({
 				},
 				git = {
 					unstaged = "",
-					staged = "S",
+					staged = "+",
 					unmerged = "",
-					renamed = "➜",
-					untracked = "U",
-					deleted = "",
+					renamed = "»",
+					untracked = "?",
+					deleted = "✘",
 					ignored = "◌",
 				},
 			},
@@ -54,14 +54,17 @@ nvim_tree.setup({
 		},
 	},
 	view = {
-		width = 30,
+		width = 35,
 		side = "left",
 		mappings = {
 			list = {
 				{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
 				{ key = "h", cb = tree_cb("close_node") },
-				{ key = "v", cb = tree_cb("vsplit") },
+				{ key = "-", cb = tree_cb("split") },
+				{ key = "|", cb = tree_cb("vsplit") },
+				{ key = "<C-f>", cb = tree_cb("toggle_file_info") },
 			},
 		},
 	},
+    remove_keymaps = {"<C-k>"}
 })
