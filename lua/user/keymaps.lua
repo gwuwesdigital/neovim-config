@@ -47,6 +47,10 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", expr_opts)
 keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", expr_opts)
 
+-- Turn Markdown Previewer On/Off
+keymap("", "<F6>", "<Plug>MarkdownPreview", opts)
+keymap("", "<F7>", "<Plug>MarkdownPreviewStop", opts)
+
 -- Visual --
 -- Move commands up and down with J and K
 keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
