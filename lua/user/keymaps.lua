@@ -29,6 +29,9 @@ keymap("", "<leader>d", [["_d]], opts)
 keymap("", "<C-f>", "<Nop>", opts)
 keymap("", "<C-b>", "<Nop>", opts)
 
+-- Disable Shift+K to open document
+keymap("n", "K", "<Nop>", opts)
+
 -- Navigate inside a buffer
 keymap("n", "J", "mzJ`z", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
@@ -43,9 +46,9 @@ keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Remap for dealing with word wrap
-keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", expr_opts)
-keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", expr_opts)
+-- -- Remap for dealing with word wrap
+-- keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", expr_opts)
+-- keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", expr_opts)
 
 -- Turn Markdown Previewer On/Off
 keymap("", "<F6>", "<Plug>MarkdownPreview", opts)
