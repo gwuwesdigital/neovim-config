@@ -231,6 +231,11 @@ _G.packer_plugins = {
     path = "/home/george/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-easymotion"] = {
+    loaded = true,
+    path = "/home/george/.local/share/nvim/site/pack/packer/start/vim-easymotion",
+    url = "https://github.com/easymotion/vim-easymotion"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/george/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -250,6 +255,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/george/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
     url = "https://github.com/tpope/vim-rhubarb"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/george/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-tmux-navigator"] = {
     loaded = true,

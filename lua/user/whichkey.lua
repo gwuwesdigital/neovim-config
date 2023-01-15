@@ -79,7 +79,6 @@ local opts = {
 }
 
 local mappings = {
-	["<space>"] = { "<cmd>Telescope buffers<cr>", "Most Recent Files" },
 	["x"] = { "<cmd>bdelete<CR>", "Close Buffer" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["f"] = {
@@ -91,6 +90,7 @@ local mappings = {
 	-- ["r"] = { "<cmd>%s/<<C-r><C-w>>/<C-r><C-w>/gI<Left><Left><Left><cr>", "Replace" },
 	-- ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 	-- ["x"] = { "<cmd>!chmod +x %<cr>", "Make Executable" },
+	["r"] = { "<cmd>Telescope buffers<cr>", "Most Recent Files" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
 
 	-- Ignore keymaps managed outside of which-key
