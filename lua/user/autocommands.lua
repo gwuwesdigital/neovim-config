@@ -2,7 +2,7 @@ local _general_settings = vim.api.nvim_create_augroup("GeneralSettings", { clear
 vim.api.nvim_create_autocmd("FileType", {
 	command = "nnoremap <silent> <buffer> q :close<CR>",
 	group = _general_settings,
-	pattern = { "qf", "help", "man", "lspinfo" },
+	pattern = { "qf", "help", "man", "lspinfo", "git", "fugitiveblame" },
 })
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
@@ -58,4 +58,9 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGai
 	command = "if mode() != 'c' | checktime | endif",
 	group = _auto_reload,
 	pattern = { "*" },
+})
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	command = "call fugitive#ReloadStatus()",
+	group = _auto_reload,
+	pattern = { "fugitive://**" },
 })
