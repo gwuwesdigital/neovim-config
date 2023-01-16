@@ -124,6 +124,7 @@ telescope.setup({
 			vimgrep_arguments = {
 				"rg",
 				"--hidden",
+                "--no-ignore",
 				"--color=never",
 				"--no-heading",
 				"--with-filename",
