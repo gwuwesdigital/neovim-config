@@ -85,7 +85,7 @@ telescope.setup({
 		-- Now the picker_config_key will be applied every time you call this
 		-- builtin picker
 		buffers = {
-			prompt_title = "\\Most Recently Used/",
+			prompt_title = "\\Most Recently Buffers/",
 			theme = "dropdown",
 			previewer = false,
 			ignore_current_buffer = true,

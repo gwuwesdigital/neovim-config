@@ -34,7 +34,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "gitcommit" },
 })
 
-local _markdown = vim.api.nvim_create_augroup("Git", { clear = true })
+local _markdown = vim.api.nvim_create_augroup("Markdown", { clear = true })
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	command = "setlocal wrap",
 	group = _markdown,

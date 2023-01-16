@@ -94,6 +94,7 @@ local mappings = {
 	["w"] = { "<cmd>w!<CR>", "Save" },
 
 	-- Ignore keymaps managed outside of which-key
+	["<space>"] = "which_key_ignore",
 	["p"] = "which_key_ignore",
 	["P"] = "which_key_ignore",
 	["y"] = "which_key_ignore",
