@@ -104,7 +104,7 @@ local mappings = {
 	g = {
 		name = "Git",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+		c = { "<cmd>Git log --graph<cr>", "Commit Logs" },
 		d = {
 			"<cmd>Gitsigns diffthis HEAD<cr>",
 			"Diff",
@@ -196,6 +196,11 @@ local mappings = {
 		m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		r = { "<cmd>Telescope resume<cr>", "Resume Last Search" },
 		R = { "<cmd>Telescope registers<cr>", "Registers" },
+		w = { "<cmd>Telescope grep_string<cr>", "Current Word" },
+		W = {
+			"<cmd>lua require('telescope.builtin').grep_string({additional_args={'--hidden', '--no-ignore'}})<cr>",
+			"Current Word (incl. hidden and ignored)",
+		},
 	},
 
 	t = {
