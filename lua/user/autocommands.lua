@@ -64,3 +64,25 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	group = _auto_reload,
 	pattern = { "fugitive://**" },
 })
+
+local _fugitive = vim.api.nvim_create_augroup("FugitiveExtraKeys", { clear = true })
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+	callback = function()
+		if vim.bo.ft ~= "fugitive" then
+			return
+		end
+
+		local bufnr = vim.api.nvim_get_current_buf()
+
+		vim.keymap.set("n", "<leader>P", function()
+			vim.cmd.Git("push")
+		end, { buffer = bufnr, remap = false, desc = "Push" })
+
+		-- rebase always
+		vim.keymap.set("n", "<leader>p", function()
+			vim.cmd.Git("pull --rebase")
+		end, { buffer = bufnr, remap = false, desc = "Pull" })
+	end,
+	group = _fugitive,
+	pattern = "*",
+})
