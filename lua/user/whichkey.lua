@@ -103,6 +103,12 @@ local mappings = {
 
 	g = {
 		name = "Git",
+		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+		c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+		d = {
+			"<cmd>Gitsigns diffthis HEAD<cr>",
+			"Diff",
+		},
 		g = { "<cmd>Git<cr>", "Git Status" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -116,12 +122,6 @@ local mappings = {
 			"Undo Stage Hunk",
 		},
 		o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-		d = {
-			"<cmd>Gitsigns diffthis HEAD<cr>",
-			"Diff",
-		},
 	},
 
 	h = {
