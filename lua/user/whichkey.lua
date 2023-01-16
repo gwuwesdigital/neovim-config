@@ -5,7 +5,7 @@ end
 
 local setup = {
 	plugins = {
-		marks = true, -- shows a list of your marks on ' and `
+		marks = false, -- shows a list of your marks on ' and `
 		registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
 		spelling = {
 			enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
@@ -195,12 +195,13 @@ local mappings = {
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		r = { "<cmd>Telescope resume<cr>", "Resume Last Search" },
-		R = { "<cmd>Telescope registers<cr>", "Registers" },
+		R = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Replace Current Word", silent = false },
 		w = { "<cmd>Telescope grep_string<cr>", "Current Word" },
 		W = {
 			"<cmd>lua require('telescope.builtin').grep_string({additional_args={'--hidden', '--no-ignore'}})<cr>",
 			"Current Word (incl. hidden and ignored)",
 		},
+		["'"] = { "<cmd>Telescope registers<cr>", "Registers" },
 	},
 
 	t = {
