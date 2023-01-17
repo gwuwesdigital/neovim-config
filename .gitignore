@@ -1,5 +1,5 @@
 # vim sessions
-*.vim
+Session.vim
 
 # drafts
 junk*

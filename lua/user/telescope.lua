@@ -17,7 +17,7 @@ telescope.setup({
 		selection_caret = " ",
 		path_display = { shorten = { len = 5, exclude = { -1, -2, -3 } } },
 
-		file_ignore_patterns = { "^.git/", "secret", "%.vim" },
+		file_ignore_patterns = { "^.git/", "secret", "Session.vim" },
 
 		mappings = {
 			i = {
