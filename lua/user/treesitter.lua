@@ -18,6 +18,7 @@ configs.setup({
 		"python",
 		"rust",
 		"typescript",
+		"terraform",
 		"yaml",
 		"help",
 	},

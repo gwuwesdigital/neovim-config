@@ -12,6 +12,7 @@ local servers = {
 	"jsonls",
 	"pyright",
 	"sumneko_lua",
+	"terraformls",
 	"yamlls",
 }
 
