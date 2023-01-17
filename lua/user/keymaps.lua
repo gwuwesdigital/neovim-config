@@ -32,6 +32,9 @@ keymap("", "<C-b>", "<Nop>", opts)
 -- Disable Shift+K to open document
 keymap("n", "K", "<Nop>", opts)
 
+-- Disable jumping to the next occurrence when matching current word
+keymap("n", "*", [[:keepjumps normal! mi*`i<CR>]], opts)
+
 -- Navigate inside a buffer
 keymap("n", "J", "mzJ`z", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
