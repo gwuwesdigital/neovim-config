@@ -57,6 +57,18 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	group = _git,
 	pattern = "*",
 })
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+	callback = function()
+		if vim.bo.ft ~= "git" then
+			return
+		end
+		local bufnr = vim.api.nvim_get_current_buf()
+		-- disable jumping to the next occurrence
+		vim.keymap.set("n", "*", "<cmd>keepjumps normal! mi*`i<cr>", { buffer = bufnr, remap = false })
+	end,
+	group = _git,
+	pattern = "*",
+})
 
 local _markdown = vim.api.nvim_create_augroup("Markdown", { clear = true })
 vim.api.nvim_create_autocmd({ "FileType" }, {
