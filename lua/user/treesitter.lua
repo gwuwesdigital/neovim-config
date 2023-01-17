@@ -11,6 +11,7 @@ configs.setup({
 		"bash",
 		"c",
 		"cpp",
+        "dockerfile",
 		"go",
 		"lua",
 		"markdown",
