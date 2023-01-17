@@ -88,7 +88,7 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 		if vim.bo.ft ~= "fugitive" then
 			return
 		end
-        vim.cmd[[call fugitive#ReloadStatus()]]
+		vim.cmd([[call fugitive#ReloadStatus()]])
 	end,
 	group = _auto_reload,
 	pattern = { "*" },
