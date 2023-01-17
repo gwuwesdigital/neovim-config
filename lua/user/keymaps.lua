@@ -46,9 +46,9 @@ keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- -- Remap for dealing with word wrap
--- keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", expr_opts)
--- keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", expr_opts)
+-- Remap for dealing with word wrap
+keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", expr_opts)
+keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", expr_opts)
 
 -- Turn Markdown Previewer On/Off
 keymap("", "<F6>", "<Plug>MarkdownPreview", opts)
