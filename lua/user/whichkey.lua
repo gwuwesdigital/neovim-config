@@ -67,6 +67,9 @@ local setup = {
 		i = { "j", "k" },
 		v = { "j", "k" },
 	},
+	disable = {
+		filetypes = { "fugitive" },
+	},
 }
 
 local opts = {
