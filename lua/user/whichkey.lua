@@ -95,6 +95,7 @@ local mappings = {
 	["r"] = { "<cmd>Telescope buffers<cr>", "Most Recent Buffers" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["x"] = { "<cmd>bdelete<CR>", "Close Buffer" },
+	["X"] = { "<cmd>%bd|e#|bd#<CR>", "Close All Buffers" },
 
 	-- Ignore keymaps managed outside of which-key
 	["<space>"] = "which_key_ignore",
