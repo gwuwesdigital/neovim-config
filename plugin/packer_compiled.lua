@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/george/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["fugitive-gitlab.vim"] = {
+    loaded = true,
+    path = "/home/george/.local/share/nvim/site/pack/packer/start/fugitive-gitlab.vim",
+    url = "https://github.com/shumphrey/fugitive-gitlab.vim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/george/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",

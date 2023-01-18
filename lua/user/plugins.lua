@@ -55,6 +55,7 @@ require("packer").startup(function(use)
 	use("tpope/vim-fugitive")
 	use("tpope/vim-rhubarb")
 	use("lewis6991/gitsigns.nvim")
+	use("shumphrey/fugitive-gitlab.vim")
 
 	-- Navigation
 	-- 1. Telescope
