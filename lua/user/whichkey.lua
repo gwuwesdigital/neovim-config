@@ -107,8 +107,9 @@ local mappings = {
 
 	g = {
 		name = "Git",
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		c = { "<cmd>Git log --graph<cr>", "Commit Logs" },
+		b = { "<cmd>Git blame<cr>", "Blame" },
+		c = { "<cmd>Telescope git_branches<cr>", "Checkout Branch" },
+		C = { "<cmd>Telescope git_commits<cr>", "Checkout Commits" },
 		d = {
 			"<cmd>Gitsigns diffthis HEAD<cr>",
 			"Diff",
@@ -116,7 +117,7 @@ local mappings = {
 		g = { "<cmd>Git<cr>", "Git Status" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-		l = { "<cmd>Git blame<cr>", "Blame" },
+		l = { "<cmd>Git log --graph<cr>", "Commit Logs" },
 		p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
 		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 		R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
