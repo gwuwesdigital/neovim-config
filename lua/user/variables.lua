@@ -17,3 +17,6 @@ vim.g.clipboard = {
 
 -- Prevent C-h C-j C-k C-l moving over the edge
 vim.g.tmux_navigator_no_wrap = 1
+
+-- Enable gx map to open webpages
+vim.g.netrw_browsex_viewer = "cmd.exe /C start"
