@@ -82,7 +82,6 @@ local opts = {
 }
 
 local mappings = {
-	["x"] = { "<cmd>bdelete<CR>", "Close Buffer" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["f"] = {
 		'<cmd>Telescope current_buffer_fuzzy_find theme=ivy layout_config={"height":35}<cr>',
@@ -95,6 +94,7 @@ local mappings = {
 	-- ["x"] = { "<cmd>!chmod +x %<cr>", "Make Executable" },
 	["r"] = { "<cmd>Telescope buffers<cr>", "Most Recent Buffers" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
+	["x"] = { "<cmd>bdelete<CR>", "Close Buffer" },
 
 	-- Ignore keymaps managed outside of which-key
 	["<space>"] = "which_key_ignore",
