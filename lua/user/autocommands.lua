@@ -77,6 +77,11 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "markdown" },
 })
 vim.api.nvim_create_autocmd({ "FileType" }, {
+	command = "setlocal linebreak",
+	group = _markdown,
+	pattern = { "markdown" },
+})
+vim.api.nvim_create_autocmd({ "FileType" }, {
 	command = "setlocal spell",
 	group = _markdown,
 	pattern = { "markdown" },
