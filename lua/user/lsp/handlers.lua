@@ -10,7 +10,6 @@ M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
 M.setup = function()
-
 	local signs = {
 		{ name = "DiagnosticSignError", text = "" },
 		{ name = "DiagnosticSignWarn", text = "" },
@@ -71,7 +70,7 @@ M.on_attach = function(client, bufnr)
 	end
 
 	nmap("gd", "<cmd>lua vim.lsp.buf.definition()<cr>", "Goto [d]efinition")
-	nmap("gr", "<cmd>lua require(\"telescope.builtin\").lsp_references()<cr>", "Goto [r]eferences")
+	nmap("gr", '<cmd>lua require("telescope.builtin").lsp_references()<cr>', "Goto [r]eferences")
 	nmap("gI", "<cmd>lua vim.lsp.buf.implementation()<cr>", "Goto [I]mplementation")
 	nmap("gl", "<cmd>lua vim.diagnostic.open_float()<cr>", "[l]ine Diagnostic")
 	nmap("gK", "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover Do[K]umentation")
