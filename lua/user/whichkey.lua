@@ -187,8 +187,9 @@ local mappings = {
 
 	q = {
 		name = "Quit",
-		q = { "<cmd>q<CR>", "Current Window" },
 		a = { "<cmd>qa<CR>", "Current All" },
+		o = { "<C-w><C-o>", "Others" },
+		q = { "<cmd>q<CR>", "Current Window" },
 	},
 
 	s = {
