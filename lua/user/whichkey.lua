@@ -211,9 +211,26 @@ local mappings = {
 
 	t = {
 		name = "Troubleshoot",
-		q = { "<cmd>Telescope quickfix<cr>", "Open Quickfix List" },
-		l = { "<cmd>Telescope loclist<cr>", "Open Location List" },
 		d = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Add Diagnostic to Quickfix" },
+        l = {
+            name = "Location List",
+            f = { "<cmd>lfirst<cr>", "Goto First" },
+            l = { "<cmd>llast<cr>", "Goto Last" },
+            n = { "<cmd>lnext<cr>", "Goto Next" },
+            o = { "<cmd>lopen<cr>", "Open Location List" },
+            p = { "<cmd>lprev<cr>", "Goto Prev" },
+            s = { "<cmd>Telescope loclist<cr>", "Search Location List" },
+        },
+		q = {
+            name = "Quickfix List",
+            f = { "<cmd>cfirst<cr>", "Goto First" },
+            l = { "<cmd>clast<cr>", "Goto Last" },
+            n = { "<cmd>cnext<cr>", "Goto Next" },
+            o = { "<cmd>copen<cr>", "Open Quickfix List" },
+            p = { "<cmd>cprev<cr>", "Goto Prev" },
+            s = { "<cmd>Telescope quickfix<cr>", "Search Quickfix List" },
+
+        },
 		u = { "<cmd>UndotreeToggle<CR>", "UndoTree" },
 	},
 }
