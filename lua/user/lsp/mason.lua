@@ -11,7 +11,7 @@ local servers = {
 	-- "tsserver",
 	"jsonls",
 	"pyright",
-	"sumneko_lua",
+	"lua_ls",
 	"terraformls",
 	"yamlls",
 }
