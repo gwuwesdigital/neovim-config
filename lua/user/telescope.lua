@@ -134,7 +134,9 @@ telescope.setup({
 			},
 			mappings = {
 				i = {
-					["<C-g>"] = lga_actions.quote_prompt({ postfix = " --iglob" }),
+					["<C-f>"] = lga_actions.quote_prompt({ postfix = " -F" }),
+					["<C-a>"] = lga_actions.quote_prompt({ postfix = " --iglob=" }),
+					["<C-w>"] = lga_actions.quote_prompt({ postfix = " -w" }),
 				},
 			},
 		},

@@ -126,8 +126,7 @@ local mappings = {
 			"<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
 			"Undo Stage Hunk",
 		},
-		o = { "<cmd>Telescope git_status<cr>", "Open Changed File" },
-		O = { "<cmd>GBrowse<cr>", "Open in Browser" },
+		o = { "<cmd>GBrowse<cr>", "Open in Browser" },
 	},
 
 	h = {
