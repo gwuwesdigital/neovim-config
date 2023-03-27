@@ -106,6 +106,7 @@ require("packer").startup(function(use)
 	use("folke/tokyonight.nvim") -- Colorscheme
 	use("RRethy/vim-illuminate") -- highlight cursor word
 	use("norcalli/nvim-colorizer.lua") -- color highlighter for Neovim
+	use("mechatroner/rainbow_csv") -- csv highlighter
 
 	if is_bootstrap then
 		require("packer").sync()
