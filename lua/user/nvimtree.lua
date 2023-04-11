@@ -60,8 +60,8 @@ nvim_tree.setup({
 			list = {
 				{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
 				{ key = "h", cb = tree_cb("close_node") },
-				{ key = "-", cb = tree_cb("split") },
-				{ key = "|", cb = tree_cb("vsplit") },
+				{ key = "<C-e>", cb = tree_cb("split") },
+				{ key = "<C-v>", cb = tree_cb("vsplit") },
 				{ key = "<C-f>", cb = tree_cb("toggle_file_info") },
 			},
 		},
