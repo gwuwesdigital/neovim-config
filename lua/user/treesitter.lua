@@ -22,7 +22,6 @@ configs.setup({
 		"terraform",
 		"yaml",
 		"vim",
-		"help",
 	},
 	highlight = { enable = true },
 	indent = { enable = true, disable = { "python" } },
