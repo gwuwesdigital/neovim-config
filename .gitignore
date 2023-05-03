@@ -1,5 +1,8 @@
-# vim sessions
-Session.vim
-
 # drafts
 junk*
+
+# caches
+Session.vim
+
+# local configs
+.gitconfig
