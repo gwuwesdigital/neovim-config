@@ -85,7 +85,7 @@ require("packer").startup(function(use)
 	-- 4. Harpoon
 	use("theprimeagen/harpoon") -- Quick navigation between buffers
 	-- 5. File tree
-	use("kyazdani42/nvim-tree.lua")
+	use("nvim-tree/nvim-tree.lua")
 	use("nvim-tree/nvim-web-devicons")
 	-- 6. Easy Motion
 	use("easymotion/vim-easymotion")
