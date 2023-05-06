@@ -85,8 +85,12 @@ require("packer").startup(function(use)
 	-- 4. Harpoon
 	use("theprimeagen/harpoon") -- Quick navigation between buffers
 	-- 5. File tree
-	use("nvim-tree/nvim-tree.lua")
-	use("nvim-tree/nvim-web-devicons")
+	use({
+        "nvim-tree/nvim-tree.lua",
+        requires = {
+            "nvim-tree/nvim-web-devicons"
+        }
+    })
 	-- 6. Easy Motion
 	use("easymotion/vim-easymotion")
 	-- 7. Tmux Vim negvigator (using C-h C-j C-k C-l to move within and across vim)
