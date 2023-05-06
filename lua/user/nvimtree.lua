@@ -10,8 +10,8 @@ local function on_attach(bufnr)
 		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 	end
 
-    -- default keybinds
-    api.config.mappings.default_on_attach(bufnr)
+	-- default keybinds
+	api.config.mappings.default_on_attach(bufnr)
 
 	-- remove keymaps
 	vim.keymap.set("n", "<C-k>", "", { buffer = bufnr })
@@ -73,6 +73,6 @@ nvim_tree.setup({
 	},
 	view = {
 		width = 35,
-		side = "left"
-	}
+		side = "left",
+	},
 })
