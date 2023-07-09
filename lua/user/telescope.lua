@@ -121,19 +121,10 @@ telescope.setup({
 			prompt_title = "\\Search in Current Workspace/",
 			theme = "ivy",
 			layout_config = { height = 35 },
-			vimgrep_arguments = {
-				"rg",
-				"--hidden",
-                "--no-ignore",
-				"--color=never",
-				"--no-heading",
-				"--with-filename",
-				"--line-number",
-				"--column",
-				"--smart-case",
-			},
+			vimgrep_arguments = { "rg" },
 			mappings = {
 				i = {
+					["<C-k>"] = lga_actions.quote_prompt(),
 					["<C-f>"] = lga_actions.quote_prompt({ postfix = " -F" }),
 					["<C-a>"] = lga_actions.quote_prompt({ postfix = " --iglob=" }),
 					["<C-w>"] = lga_actions.quote_prompt({ postfix = " -w" }),
