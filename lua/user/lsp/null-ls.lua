@@ -15,7 +15,9 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
 		formatting.beautysh,
+		formatting.yamlfmt,
 		diagnostics.flake8,
 		diagnostics.shellcheck,
+		diagnostics.yamllint,
 	},
 })
