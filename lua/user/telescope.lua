@@ -10,7 +10,6 @@ local lga_actions = require("telescope-live-grep-args.actions")
 -- See `:help telescope` and `:help telescope.setup()`
 telescope.setup({
 	defaults = {
-
 		layout_strategy = "vertical",
 
 		prompt_prefix = " ",
@@ -34,7 +33,7 @@ telescope.setup({
 				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
 				["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
 				["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-                ["<C-l>"] = actions.smart_send_to_loclist + actions.open_loclist,
+				["<C-l>"] = actions.smart_send_to_loclist + actions.open_loclist,
 
 				["<C-u>"] = actions.preview_scrolling_up,
 				["<C-d>"] = actions.preview_scrolling_down,
@@ -77,7 +76,8 @@ telescope.setup({
 			},
 		},
 	},
-	pickers = { -- Default configuration for builtin pickers goes here:
+	pickers = {
+		-- Default configuration for builtin pickers goes here:
 		-- picker_name = {
 		--   picker_config_key = value,
 		--   ...

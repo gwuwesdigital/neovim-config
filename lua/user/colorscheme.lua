@@ -28,7 +28,7 @@ tokyonight.setup({
     -- Change the "hint" color to the "orange" color, and make the "error" color bright red
     on_colors = function(colors)
         colors.comment = "#737aa2"          --colors.dark5
-        colors.terminal_black = "#828bb8"   --colors.fg_dark
+        -- colors.terminal_black = "#828bb8"   --colors.fg_dark
         colors.fg_gutter = "#545c7e"        --colors.dark3
         colors.git = {
             change = "#86e1fc",             --colors.cyan
