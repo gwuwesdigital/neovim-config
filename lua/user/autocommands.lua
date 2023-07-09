@@ -2,7 +2,7 @@ local _general_settings = vim.api.nvim_create_augroup("GeneralSettings", { clear
 vim.api.nvim_create_autocmd("FileType", {
 	command = "nnoremap <silent> <buffer> q :close<CR>",
 	group = _general_settings,
-	pattern = { "qf", "help", "man", "lspinfo", "git", "fugitiveblame" },
+	pattern = { "qf", "help", "man", "lspinfo", "git", "fugitiveblame", "fugitive" },
 })
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
