@@ -60,6 +60,10 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", expr_opts)
 keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", expr_opts)
 
+-- Git diffget from left or right
+keymap("n", "ge", "<cmd>diffget //2<CR>", opts)
+keymap("n", "gi", "<cmd>diffget //3<CR>", opts)
+
 -- Turn Markdown Previewer On/Off
 keymap("", "<F6>", "<Plug>MarkdownPreview", opts)
 keymap("", "<F7>", "<Plug>MarkdownPreviewStop", opts)
