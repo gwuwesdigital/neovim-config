@@ -49,10 +49,14 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 			vim.cmd.Git("push")
 		end, { buffer = bufnr, remap = false, desc = "Push" })
 
-		-- rebase always
 		vim.keymap.set("n", "<leader>p", function()
-			vim.cmd.Git("pull --rebase")
+			vim.cmd.Git("pull")
 		end, { buffer = bufnr, remap = false, desc = "Pull" })
+
+		vim.keymap.set("n", "<leader>b", function()
+			vim.cmd.Git("pull --rebase")
+		end, { buffer = bufnr, remap = false, desc = "Rebase Pull" })
+
 	end,
 	group = _git,
 	pattern = "*",
