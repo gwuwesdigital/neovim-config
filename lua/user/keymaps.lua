@@ -80,3 +80,7 @@ keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Disable <leader>u to turn selection to lowercase
+keymap("v", "<leader>u", "<Nop>", opts)
+
