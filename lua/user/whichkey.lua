@@ -103,7 +103,12 @@ local mappings = {
 	["P"] = "which_key_ignore",
 	["y"] = "which_key_ignore",
 	["Y"] = "which_key_ignore",
-	["d"] = "which_key_ignore",
+
+    d = {
+        name = "Diff Files",
+        o = {"<cmd>windo diffthis<cr>", "Open Diff View"},
+        f = {"<cmd>windo diffoff<cr>", "Close Diff View"}
+    },
 
 	g = {
 		name = "Git",
