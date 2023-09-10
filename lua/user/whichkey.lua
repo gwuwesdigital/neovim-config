@@ -107,7 +107,7 @@ local mappings = {
     d = {
         name = "Diff Files",
         o = {"<cmd>windo diffthis<cr>", "Open Diff View"},
-        f = {"<cmd>windo diffoff<cr>", "Close Diff View"}
+        c = {"<cmd>windo diffoff<cr>", "Close Diff View"}
     },
 
 	g = {
