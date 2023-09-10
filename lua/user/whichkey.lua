@@ -139,7 +139,7 @@ local mappings = {
 		["8"] = { "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", "which_key_ignore" },
 		["9"] = { "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", "which_key_ignore" },
 		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add File" },
-		e = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Explorer" },
+		h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Explorer" },
 		n = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next" },
 		p = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Prev" },
 	},
