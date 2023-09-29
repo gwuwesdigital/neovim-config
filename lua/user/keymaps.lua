@@ -29,6 +29,10 @@ keymap("", "<leader>d", [["_d]], opts)
 keymap("", "<C-f>", "<Nop>", opts)
 keymap("", "<C-b>", "<Nop>", opts)
 
+-- Switch betwen horizontal and vertical split
+keymap("", "<C-w>-", "<C-w>K", opts)
+keymap("", "<C-w>|", "<C-w>H", opts)
+
 -- Disable Shift+K to open document
 keymap("n", "K", "<Nop>", opts)
 
