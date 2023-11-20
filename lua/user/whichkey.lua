@@ -83,11 +83,11 @@ local opts = {
 
 local mappings = {
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	["f"] = {
+	["/"] = {
 		'<cmd>Telescope current_buffer_fuzzy_find theme=ivy layout_config={"height":35}<cr>',
 		"Search in Currnt Buffer",
 	},
-	["F"] = { "<cmd>Telescope live_grep_args<cr>", "Search in Current Workspace" },
+	["f"] = { "<cmd>Telescope live_grep_args<cr>", "Search in Current Workspace" },
 	["n"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	-- ["r"] = { "<cmd>%s/<<C-r><C-w>>/<C-r><C-w>/gI<Left><Left><Left><cr>", "Replace" },
 	-- ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
@@ -202,7 +202,7 @@ local mappings = {
 		h = { "<cmd>Telescope help_tags<cr>", "Help" },
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-		r = { "<cmd>Telescope resume<cr>", "Resume Last Search" },
+		s = { "<cmd>Telescope resume<cr>", "Resume Last Search" },
 		R = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Replace Current Word", silent = false },
 		w = { "<cmd>Telescope grep_string<cr>", "Current Word" },
 		W = {
