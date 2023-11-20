@@ -16,6 +16,10 @@ local function on_attach(bufnr)
 	-- remove keymaps
 	vim.keymap.set("n", "<C-k>", "", { buffer = bufnr })
 	vim.keymap.del("n", "<C-k>", { buffer = bufnr })
+	vim.keymap.set("n", "<C-x>", "", { buffer = bufnr })
+	vim.keymap.del("n", "<C-x>", { buffer = bufnr })
+	vim.keymap.set("n", "<C-t>", "", { buffer = bufnr })
+	vim.keymap.del("n", "<C-t>", { buffer = bufnr })
 
 	-- custom keymaps
 	vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
