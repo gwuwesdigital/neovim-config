@@ -25,34 +25,36 @@ tokyonight.setup({
 	dim_inactive = false, -- dims inactive windows
 	lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
 
-    -- Change the "hint" color to the "orange" color, and make the "error" color bright red
-    on_colors = function(colors)
-        colors.comment = "#737aa2"          --colors.dark5
-        -- colors.terminal_black = "#828bb8"   --colors.fg_dark
-        colors.fg_gutter = "#545c7e"        --colors.dark3
-        colors.git = {
-            change = "#86e1fc",             --colors.cyan
-            add = "#c3e88d",                --colors.green
-            delete = "#ff757f",             --colors.red
-        }
-        colors.gitSigns = {
-            change = "#86e1fc",             --colors.cyan
-            add = "#c3e88d",                --colors.green
-            delete = "#ff757f",             --colors.red
-        }
-    end,
+	-- Change the "hint" color to the "orange" color, and make the "error" color bright red
+	on_colors = function(colors)
+		colors.comment = "#737aa2" --colors.dark5
+		colors.fg_gutter = "#545c7e" --colors.dark3
+		colors.git = {
+			change = "#86e1fc", --colors.cyan
+			add = "#c3e88d", --colors.green
+			delete = "#ff757f", --colors.red
+		}
+		colors.gitSigns = {
+			change = "#86e1fc", --colors.cyan
+			add = "#c3e88d", --colors.green
+			delete = "#ff757f", --colors.red
+		}
+	end,
 
-    on_highlights = function(highlights, _)
-        highlights.CursorLine = {
-            bg = "#444a73", --colors.terminal_black
-        }
-        highlights.CursorLineNr = {
-            fg = "#c8d3f5", --colors.fg
-        }
-        highlights.GitSignsCurrentLineBlame = {
-            fg = "#828bb8", --colors.fg_dark
-        }
-    end,
+	on_highlights = function(highlights, c)
+		highlights.CursorLine = {
+			bg = "#444a73", --colors.terminal_black
+		}
+		highlights.CursorLineNr = {
+			fg = "#c8d3f5", --colors.fg
+		}
+		highlights.GitSignsCurrentLineBlame = {
+			fg = "#828bb8", --colors.fg_dark
+		}
+		highlights.DiagnosticUnnecessary = {
+			fg = c.comment, --colors.terminal_black
+		}
+	end,
 })
 
 -- Set colorscheme
