@@ -104,11 +104,11 @@ local mappings = {
 	["y"] = "which_key_ignore",
 	["Y"] = "which_key_ignore",
 
-    d = {
-        name = "Diff Files",
-        o = {"<cmd>windo diffthis<cr>", "Open Diff View"},
-        c = {"<cmd>windo diffoff<cr>", "Close Diff View"}
-    },
+	d = {
+		name = "Diff Files",
+		o = { "<cmd>windo diffthis<cr>", "Open Diff View" },
+		c = { "<cmd>windo diffoff<cr>", "Close Diff View" },
+	},
 
 	g = {
 		name = "Git",
@@ -215,25 +215,24 @@ local mappings = {
 	t = {
 		name = "Troubleshoot",
 		d = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Add Diagnostic to Quickfix" },
-        l = {
-            name = "Location List",
-            f = { "<cmd>lfirst<cr>", "Goto First" },
-            l = { "<cmd>llast<cr>", "Goto Last" },
-            n = { "<cmd>lnext<cr>", "Goto Next" },
-            o = { "<cmd>lopen<cr>", "Open Location List" },
-            p = { "<cmd>lprev<cr>", "Goto Prev" },
-            s = { "<cmd>Telescope loclist<cr>", "Search Location List" },
-        },
+		l = {
+			name = "Location List",
+			f = { "<cmd>lfirst<cr>", "Goto First" },
+			l = { "<cmd>llast<cr>", "Goto Last" },
+			n = { "<cmd>lnext<cr>", "Goto Next" },
+			o = { "<cmd>lopen<cr>", "Open Location List" },
+			p = { "<cmd>lprev<cr>", "Goto Prev" },
+			s = { "<cmd>Telescope loclist<cr>", "Search Location List" },
+		},
 		q = {
-            name = "Quickfix List",
-            f = { "<cmd>cfirst<cr>", "Goto First" },
-            l = { "<cmd>clast<cr>", "Goto Last" },
-            n = { "<cmd>cnext<cr>", "Goto Next" },
-            o = { "<cmd>copen<cr>", "Open Quickfix List" },
-            p = { "<cmd>cprev<cr>", "Goto Prev" },
-            s = { "<cmd>Telescope quickfix<cr>", "Search Quickfix List" },
-
-        },
+			name = "Quickfix List",
+			f = { "<cmd>cfirst<cr>", "Goto First" },
+			l = { "<cmd>clast<cr>", "Goto Last" },
+			n = { "<cmd>cnext<cr>", "Goto Next" },
+			o = { "<cmd>copen<cr>", "Open Quickfix List" },
+			p = { "<cmd>cprev<cr>", "Goto Prev" },
+			s = { "<cmd>Telescope quickfix<cr>", "Search Quickfix List" },
+		},
 		u = { "<cmd>UndotreeToggle<CR>", "UndoTree" },
 	},
 }
