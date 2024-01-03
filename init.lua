@@ -1,4 +1,5 @@
 require("user.autocommands")
+require("user.chafa")
 require("user.cmp")
 require("user.colorscheme")
 require("user.colorizer")

@@ -34,11 +34,11 @@ require("packer").startup(function(use)
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			-- Useful status updates for LSP
-            {"j-hui/fidget.nvim", tag = "legacy"},
+			{ "j-hui/fidget.nvim" },
 			-- Additional lua configuration, makes nvim stuff amazing
 			"folke/neodev.nvim",
 			-- Formatting and Diagnostics
-			"jose-elias-alvarez/null-ls.nvim",
+			"nvimtools/none-ls.nvim",
 		},
 	})
 	-- 3. Snippets
@@ -112,6 +112,15 @@ require("packer").startup(function(use)
 	use("RRethy/vim-illuminate") -- highlight cursor word
 	use("norcalli/nvim-colorizer.lua") -- color highlighter for Neovim
 	use("mechatroner/rainbow_csv") -- csv highlighter
+
+	-- Media
+	use({
+		"princejoogie/chafa.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"m00qek/baleia.nvim",
+		},
+	})
 
 	if is_bootstrap then
 		require("packer").sync()

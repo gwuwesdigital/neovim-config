@@ -84,6 +84,16 @@ _G.packer_plugins = {
     path = "/home/george/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["baleia.nvim"] = {
+    loaded = true,
+    path = "/home/george/.local/share/nvim/site/pack/packer/start/baleia.nvim",
+    url = "https://github.com/m00qek/baleia.nvim"
+  },
+  ["chafa.nvim"] = {
+    loaded = true,
+    path = "/home/george/.local/share/nvim/site/pack/packer/start/chafa.nvim",
+    url = "https://github.com/princejoogie/chafa.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/george/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -164,10 +174,10 @@ _G.packer_plugins = {
     path = "/home/george/.local/share/nvim/site/pack/packer/start/neodev.nvim",
     url = "https://github.com/folke/neodev.nvim"
   },
-  ["null-ls.nvim"] = {
+  ["none-ls.nvim"] = {
     loaded = true,
-    path = "/home/george/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+    path = "/home/george/.local/share/nvim/site/pack/packer/start/none-ls.nvim",
+    url = "https://github.com/nvimtools/none-ls.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
