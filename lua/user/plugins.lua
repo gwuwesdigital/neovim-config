@@ -11,10 +11,10 @@ require("packer").startup(function(use)
 	-- Package manager
 	use("wbthomason/packer.nvim")
 
-    -- Session manager
+	-- Session manager
 	use("tpope/vim-obsession")
 
-    -- Coding
+	-- Coding
 	-- 1. Autocompletion
 	use({
 		"hrsh7th/nvim-cmp",
@@ -44,12 +44,13 @@ require("packer").startup(function(use)
 	-- 3. Snippets
 	use({ "L3MON4D3/LuaSnip" }) --snippet engine
 	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
-    -- 4. "gc" to comment visual regions/lines
+	-- 4. "gc" to comment visual regions/lines
 	use("numToStr/Comment.nvim")
-    -- 5. Add and remove surroundings symbols
+	-- 5. Add and remove surroundings symbols
 	use("tpope/vim-surround")
-    -- 6. Troubleshooting
-    use("mbbill/undotree") -- Undo tree
+	-- 6. Troubleshooting
+	use("mbbill/undotree") -- Undo tree
+
 
 	-- Git related plugins
 	use("tpope/vim-fugitive")
@@ -86,17 +87,17 @@ require("packer").startup(function(use)
 	use("theprimeagen/harpoon") -- Quick navigation between buffers
 	-- 5. File tree
 	use({
-        "nvim-tree/nvim-tree.lua",
-        requires = {
-            "nvim-tree/nvim-web-devicons"
-        }
-    })
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons",
+		},
+	})
 	-- 6. Easy Motion
 	use("easymotion/vim-easymotion")
 	-- 7. Tmux Vim negvigator (using C-h C-j C-k C-l to move within and across vim)
 	use("christoomey/vim-tmux-navigator")
 
-    -- Markdown Previewer
+	-- Markdown Previewer
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = function()
@@ -104,7 +105,7 @@ require("packer").startup(function(use)
 		end,
 	})
 
-    -- Visual Aids
+	-- Visual Aids
 	use("nvim-lualine/lualine.nvim") -- Fancier statusline
 	use("lukas-reineke/indent-blankline.nvim") -- Add indentation guides even on blank lines
 	use("folke/tokyonight.nvim") -- Colorscheme

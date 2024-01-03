@@ -11,36 +11,27 @@ local lga_actions = require("telescope-live-grep-args.actions")
 telescope.setup({
 	defaults = {
 		layout_strategy = "vertical",
-
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { shorten = { len = 5, exclude = { -1, -2, -3 } } },
-
 		file_ignore_patterns = { "^.git/", "secret", "Session.vim" },
-
 		mappings = {
 			i = {
-				["<C-n>"] = actions.cycle_history_next,
-				["<C-p>"] = actions.cycle_history_prev,
-
+				-- ["<C-n>"] = actions.cycle_history_next,
+				-- ["<C-p>"] = actions.cycle_history_prev,
 				["<Down>"] = actions.move_selection_next,
 				["<Up>"] = actions.move_selection_previous,
-
 				["<CR>"] = actions.select_default,
 				["<C-e>"] = actions.select_horizontal,
 				["<C-v>"] = actions.select_vertical,
-
 				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
 				["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
 				["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
 				["<C-l>"] = actions.smart_send_to_loclist + actions.open_loclist,
-
 				["<C-u>"] = actions.preview_scrolling_up,
 				["<C-d>"] = actions.preview_scrolling_down,
-
 				["<PageUp>"] = actions.results_scrolling_up,
 				["<PageDown>"] = actions.results_scrolling_down,
-
 			},
 			n = {
 				["<esc>"] = actions.close,
@@ -48,29 +39,23 @@ telescope.setup({
 				["<C-e>"] = actions.select_horizontal,
 				["<C-v>"] = actions.select_vertical,
 				["<C-t>"] = actions.select_tab,
-
 				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
 				["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
 				["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
 				["<C-l>"] = actions.smart_send_to_loclist + actions.open_loclist,
-
 				["j"] = actions.move_selection_next,
 				["k"] = actions.move_selection_previous,
 				["H"] = actions.move_to_top,
 				["M"] = actions.move_to_middle,
 				["L"] = actions.move_to_bottom,
-
 				-- ["<Down>"] = actions.move_selection_next,
 				-- ["<Up>"] = actions.move_selection_previous,
 				["gg"] = actions.move_to_top,
 				["G"] = actions.move_to_bottom,
-
 				["<C-u>"] = actions.preview_scrolling_up,
 				["<C-d>"] = actions.preview_scrolling_down,
-
 				["<PageUp>"] = actions.results_scrolling_up,
 				["<PageDown>"] = actions.results_scrolling_down,
-
 			},
 		},
 	},
