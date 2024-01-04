@@ -21,6 +21,11 @@ vim.api.nvim_create_autocmd("FileType", {
 	group = _general_settings,
 	pattern = "qf",
 })
+vim.api.nvim_create_autocmd("FileType", {
+	command = "BufNewFile,BufRead Dockerfile,*.Dockerfile,Dockerfile.* setf dockerfile",
+	group = _general_settings,
+	pattern = "qf",
+})
 
 local _git = vim.api.nvim_create_augroup("Git", { clear = true })
 vim.api.nvim_create_autocmd({ "FileType" }, {
