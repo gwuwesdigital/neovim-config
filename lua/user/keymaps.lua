@@ -20,6 +20,7 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Managing copy and pasting using register
+keymap("x", "<leader>P", [["_dp]], opts)
 keymap("x", "<leader>p", [["_dP]], opts)
 keymap("", "<leader>y", [["+y]], opts)
 keymap("n", "<leader>Y", [["+Y]], opts)
@@ -78,13 +79,12 @@ keymap("", "<F7>", "<Plug>MarkdownPreviewStop", opts)
 
 -- Visual --
 -- Move commands up and down with J and K
-keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
+keymap("x", "J", ":m '>+1<CR>gv=gv", opts)
+keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
 
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+keymap("x", "<", "<gv", opts)
+keymap("x", ">", ">gv", opts)
 
 -- Disable <leader>u to turn selection to lowercase
-keymap("v", "<leader>u", "<Nop>", opts)
-
+keymap("x", "<leader>u", "<Nop>", opts)

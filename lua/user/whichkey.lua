@@ -88,6 +88,10 @@ local mappings = {
 		"Search in Currnt Buffer",
 	},
 	["f"] = { "<cmd>Telescope live_grep_args<cr>", "Search in Current Workspace" },
+	["*"] = {
+		"<cmd>lua require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()<cr>",
+		"Search in Current Workspace",
+	},
 	["n"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	-- ["r"] = { "<cmd>%s/<<C-r><C-w>>/<C-r><C-w>/gI<Left><Left><Left><cr>", "Replace" },
 	-- ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
