@@ -46,9 +46,9 @@ local function on_attach(bufnr)
 	vim.keymap.set("n", "<C-e>", api.node.open.horizontal, opts("Open: Horizontal Split"))
 	vim.keymap.set("n", "<C-v>", api.node.open.vertical, opts("Open: Vertical Split"))
 	vim.keymap.set("n", "<C-p>", api.node.show_info_popup, opts("Info"))
-	vim.keymap.set("n", "(", api.node.navigate.git.prev, opts("Previous Git"))
+	vim.keymap.set("n", "(", api.node.navigate.git.prev, opts("Prev Git"))
 	vim.keymap.set("n", ")", api.node.navigate.git.next, opts("Next Git"))
-	vim.keymap.set("n", "{", api.node.navigate.sibling.prev, opts("Previous Sibling"))
+	vim.keymap.set("n", "{", api.node.navigate.sibling.prev, opts("Prev Sibling"))
 	vim.keymap.set("n", "}", api.node.navigate.sibling.next, opts("Next Sibling"))
 end
 

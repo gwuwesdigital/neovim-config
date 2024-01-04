@@ -17,15 +17,18 @@ configs.setup({
 		"markdown",
 		"markdown_inline",
 		"python",
-		"rust",
+		-- "rust",
+		"javascript",
 		"typescript",
+		"toml",
 		"terraform",
+		"sql",
 		"yaml",
 		"vim",
 	},
 	highlight = { enable = true },
-	indent = { enable = true, disable = { "python" } },
-	autopairs = {
+	auto_install = true,
+	indent = { enable = true },
 		enable = true,
 	},
 	incremental_selection = {
@@ -33,8 +36,8 @@ configs.setup({
 		keymaps = {
 			init_selection = "<c-space>",
 			node_incremental = "<c-space>",
-			scope_incremental = "<c-s>",
-			node_decremental = "<c-backspace>",
+			scope_incremental = false,
+			node_decremental = "<bs>",
 		},
 	},
 	textobjects = {

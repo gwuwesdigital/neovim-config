@@ -52,9 +52,9 @@ cmp.setup({
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
-		["<c-d>"] = cmp.mapping.scroll_docs(4),
-		["<c-u>"] = cmp.mapping.scroll_docs(-4),
-		["<C-Space>"] = cmp.mapping.complete({}),
+		["<C-d>"] = cmp.mapping.scroll_docs(4),
+		["<C-u>"] = cmp.mapping.scroll_docs(-4),
+		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-y>"] = cmp.mapping.confirm({ select = true }),
 	}),
 	formatting = {
