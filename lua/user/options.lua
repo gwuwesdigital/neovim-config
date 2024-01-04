@@ -6,6 +6,7 @@ local options = {
 	mouse = "a", -- allow the mouse to be used in neovim
 	completeopt = { "menuone", "noselect" }, -- mostly just for cmp
 	autoread = true, -- automatically reload a buffer when there are changes happened to it outside of Vim
+	fixendofline = false, -- automatically restore EOL at the end of file if missing
 
 	-- numnber column
 	number = true, -- set numbered lines
