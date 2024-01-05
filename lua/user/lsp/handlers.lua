@@ -52,9 +52,8 @@ end
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
 M.on_attach = function(client, bufnr)
-	-- if client.name == "sumneko_lua" then
-	-- 	client.server_capabilities.documentFormattingProvider = false
-	-- end
+	if client.name == "lua_ls" then
+		client.server_capabilities.documentFormattingProvider = false
 	end
 	if client.name == "sqls" then
 		client.server_capabilities.documentFormattingProvider = false
