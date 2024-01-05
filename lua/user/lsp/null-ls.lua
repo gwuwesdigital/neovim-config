@@ -13,9 +13,11 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.prettierd,
 		formatting.stylua,
+		formatting.sqlfluff,
 		-- formatting.yamlfmt,
 		diagnostics.flake8,
 		diagnostics.shellcheck,
+		diagnostics.sqlfluff,
 		-- diagnostics.yamllint,
 	},
 })

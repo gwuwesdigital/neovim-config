@@ -1,1 +1,7 @@
-return {}
+return {
+	settings = {
+		sqls = {
+			lowercaseKeywords = true,
+		},
+	},
+}
