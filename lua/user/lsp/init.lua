@@ -7,4 +7,4 @@ require("user.lsp.null-ls")
 require("user.lsp.illuminate")
 
 -- Turn on lsp status information
-require("fidget").setup()
+require("fidget").setup({})
