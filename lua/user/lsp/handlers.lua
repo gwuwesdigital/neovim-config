@@ -80,16 +80,14 @@ M.on_attach = function(client, bufnr)
 	nmap("gS", "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Display [S]ignature Information")
 	nmap("gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", "Goto [D]eclaration")
 
+	-- Navigate between references
+	nmap("<C-n>", '<cmd>lua require("illuminate").goto_next_reference()<cr>', "Move to next reference")
+	nmap("<C-p>", '<cmd>lua require("illuminate").goto_prev_reference()<cr>', "Move to previous reference")
+
 	-- Lesser used LSP functionality
 	-- nmap("<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>", "[W]orkspace [A]dd Folder")
 	-- nmap("<leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>", "[W]orkspace [R]emove Folder")
 
-	-- Highlight on cursor word
-	local status_ok, illuminate = pcall(require, "illuminate")
-	if not status_ok then
-		return
-	end
-	illuminate.on_attach(client)
 end
 
 return M

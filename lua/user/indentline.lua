@@ -13,6 +13,7 @@ indent_blankline.setup({
 	exclude = {
 		filetypes = {
 			"undotree",
+			"csv",
 		},
 	},
 })
