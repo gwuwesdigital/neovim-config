@@ -11,9 +11,6 @@ require("packer").startup(function(use)
 	-- Package manager
 	use("wbthomason/packer.nvim")
 
-	-- Session manager
-	use("tpope/vim-obsession")
-
 	-- Coding
 	-- 1. Autocompletion
 	use({

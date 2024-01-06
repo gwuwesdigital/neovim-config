@@ -271,11 +271,6 @@ _G.packer_plugins = {
     path = "/home/george/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
   },
-  ["vim-obsession"] = {
-    loaded = true,
-    path = "/home/george/.local/share/nvim/site/pack/packer/start/vim-obsession",
-    url = "https://github.com/tpope/vim-obsession"
-  },
   ["vim-rhubarb"] = {
     loaded = true,
     path = "/home/george/.local/share/nvim/site/pack/packer/start/vim-rhubarb",

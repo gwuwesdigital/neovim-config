@@ -138,9 +138,9 @@ local mappings = {
 
 	q = {
 		name = "Quit",
-		a = { "<cmd>qa<CR>", "Current All" },
+        a = { "<cmd>mksession!<bar>qa<CR>", "Current All" },
 		o = { "<C-w><C-o>", "Others" },
-		q = { "<cmd>q<CR>", "Current Window" },
+        q = { "<cmd>mksession!<bar>q<CR>", "Current Window" },
 	},
 
 	s = {
