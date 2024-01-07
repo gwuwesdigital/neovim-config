@@ -42,7 +42,8 @@ local mappings = {
 	},
 	["n"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["r"] = { "<cmd>Telescope buffers<cr>", "Most Recent Buffers" },
-	["w"] = { "<cmd>w!<CR>", "Save" },
+	["w"] = { "<cmd>w!<CR>", "Save File" },
+	["W"] = { "<cmd>mksession!<CR>", "Save Session" },
 	["x"] = { "<cmd>bdelete<CR>", "Close Buffer" },
 	["X"] = { "<cmd>%bd|e#|bd#<CR>", "Close All Buffers" },
 
@@ -138,9 +139,9 @@ local mappings = {
 
 	q = {
 		name = "Quit",
-        a = { "<cmd>mksession!<bar>qa<CR>", "Current All" },
+        a = { "<cmd>lua require('defaults').save_and_quit('all')<CR>", "Current All" },
 		o = { "<C-w><C-o>", "Others" },
-        q = { "<cmd>mksession!<bar>q<CR>", "Current Window" },
+        q = { "<cmd>lua require('defaults').save_and_quit('single')<CR>", "Current Window" },
 	},
 
 	s = {
