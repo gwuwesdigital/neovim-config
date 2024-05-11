@@ -21,10 +21,22 @@ vim.api.nvim_create_autocmd("FileType", {
 	group = _general_settings,
 	pattern = "qf",
 })
+
+local _additional_filetypes = vim.api.nvim_create_augroup("AdditionalFileTypes", { clear = true })
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+	command = "setf sql",
+	group = _additional_filetypes,
+	pattern = "*.snowsql",
+})
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+	command = "setf jinja",
+	group = _additional_filetypes,
+	pattern = "*.jinja,*.jinja2,*.j2",
+})
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 	command = "setf dockerfile",
-	group = _general_settings,
-	pattern = "Dockerfile,*.Dockerfile,Dockerfile.*",
+	group = _additional_filetypes,
+	pattern = "Dockerfile,*.Dockerfile,Dockerfile.*,Dockerfile-*",
 })
 
 local _git = vim.api.nvim_create_augroup("Git", { clear = true })
@@ -61,7 +73,6 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 		vim.keymap.set("n", "<leader>b", function()
 			vim.cmd.Git("pull --rebase")
 		end, { buffer = bufnr, remap = false, desc = "Rebase Pull" })
-
 	end,
 	group = _git,
 	pattern = "*",
