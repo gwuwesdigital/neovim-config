@@ -73,7 +73,7 @@ M.on_attach = function(client, bufnr)
 	nmap("gr", '<cmd>lua require("telescope.builtin").lsp_references()<cr>', "Goto [r]eferences")
 	nmap("gI", "<cmd>lua vim.lsp.buf.implementation()<cr>", "Goto [I]mplementation")
 	nmap("gl", "<cmd>lua vim.diagnostic.open_float()<cr>", "[l]ine Diagnostic")
-	nmap("gK", "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover Do[K]umentation")
+	nmap("H", "<cmd>lua vim.lsp.buf.hover()<cr>", "[H]over Doumentation")
 	nmap("gS", "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Display [S]ignature Information")
 	nmap("gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", "Goto [D]eclaration")
 

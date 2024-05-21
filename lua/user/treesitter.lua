@@ -17,7 +17,6 @@ configs.setup({
 		"markdown",
 		"markdown_inline",
 		"python",
-		-- "rust",
 		"javascript",
 		"typescript",
 		"toml",

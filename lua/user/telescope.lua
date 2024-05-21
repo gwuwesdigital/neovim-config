@@ -14,7 +14,7 @@ telescope.setup({
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { shorten = { len = 5, exclude = { -1, -2, -3 } } },
-		file_ignore_patterns = { "^.git/", "secret", "node_modules", "Session.vim" },
+		file_ignore_patterns = { "^.git/", "Session.vim", "node_modules", "__pycache__", ".mypy_cache" },
 		mappings = {
 			i = {
 				-- ["<C-n>"] = actions.cycle_history_next,

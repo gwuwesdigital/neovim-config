@@ -1,5 +1,5 @@
 -- Set path to python interpreter
-vim.g.python3_host_prog = "$HOME/miniconda3/envs/neovim/bin/python"
+vim.g.python3_host_prog = vim.fn.expand("~/miniconda3/envs/neovim/bin/python")
 
 -- Use system clipboard in WSL2
 vim.g.clipboard = {

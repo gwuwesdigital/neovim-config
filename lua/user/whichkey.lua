@@ -120,6 +120,7 @@ local mappings = {
 			"Prev Diagnostic",
 		},
 		m = { "<cmd>Mason<cr>", "Mason" },
+		n = { "<cmd>NullLsInfo<cr>", "NullLs" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = {
