@@ -100,4 +100,8 @@ nvim_tree.setup({
 		width = 35,
 		side = "left",
 	},
+    filters = {
+        git_ignored = false,
+        dotfiles = true
+    }
 })
