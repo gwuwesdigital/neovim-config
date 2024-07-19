@@ -11,12 +11,16 @@ local setup = {
 			operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
 		},
 	},
-	window = {
-		border = "rounded", -- none, single, double, shadow
+	delay = 400,
+	icons = {
+		mappings = false,
+	},
+	triggers = {
+		{ "<leader>", mode = { "n", "v" } },
 	},
 	-- hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
 	disable = {
-		filetypes = { "fugitive" },
+		ft = { "fugitive" },
 	},
 }
 
@@ -30,154 +34,145 @@ local opts = {
 }
 
 local mappings = {
-	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	["/"] = {
+	{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer" },
+	{
+		"<leader>/",
 		'<cmd>Telescope current_buffer_fuzzy_find theme=ivy layout_config={"height":35}<cr>',
-		"Search in Currnt Buffer",
+		desc = "Search in Currnt Buffer",
 	},
-	["f"] = { "<cmd>Telescope live_grep_args<cr>", "Search in Current Workspace" },
-	["*"] = {
+	{ "<leader>f", "<cmd>Telescope live_grep_args<cr>", desc = "Search in Current Workspace" },
+	{
+		"<leader>*",
 		"<cmd>lua require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()<cr>",
-		"Search in Current Workspace",
+		desc = "Search in Current Workspace",
 	},
-	["n"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	["r"] = { "<cmd>Telescope buffers<cr>", "Most Recent Buffers" },
-	["w"] = { "<cmd>w!<CR>", "Save File" },
-	["W"] = { "<cmd>mksession!<CR>", "Save Session" },
-	["x"] = { "<cmd>bdelete<CR>", "Close Buffer" },
-	["X"] = { "<cmd>%bd|e#|bd#<CR>", "Close All Buffers" },
+	{ "<leader>n", "<cmd>nohlsearch<CR>", desc = "No Highlight" },
+	{ "<leader>r", "<cmd>Telescope buffers<cr>", desc = "Most Recent Buffers" },
+	{ "<leader>w", "<cmd>w!<CR>", desc = "Save File" },
+	{ "<leader>W", "<cmd>mksession!<CR>", desc = "Save Session" },
+	{ "<leader>x", "<cmd>bdelete<CR>", desc = "Close Buffer" },
+	{ "<leader>X", "<cmd>%bd|e#|bd#<CR>", desc = "Close All Buffers" },
 
 	-- Ignore keymaps managed outside of which-key
-	["<space>"] = "which_key_ignore",
-	["p"] = "which_key_ignore",
-	["P"] = "which_key_ignore",
-	["y"] = "which_key_ignore",
-	["Y"] = "which_key_ignore",
+	-- ["<space>"] = "which_key_ignore",
+	-- ["p"] = "which_key_ignore",
+	-- ["P"] = "which_key_ignore",
+	{ "<leader>y", hidden = true },
+	{ "<leader>Y", hidden = true },
 
-	d = {
-		name = "Diff Files",
-		o = { "<cmd>windo diffthis<cr>", "Open Diff View" },
-		c = { "<cmd>windo diffoff<cr>", "Close Diff View" },
+	{
+		"<leader>d",
+		group = "Diff Files",
+		{ "<leader>do", "<cmd>windo diffthis<cr>", desc = "Open Diff View" },
+		{ "<leader>dc", "<cmd>windo diffoff<cr>", desc = "Close Diff View" },
 	},
 
-	g = {
-		name = "Git",
-		b = { "<cmd>Git blame<cr>", "Blame" },
-		c = { "<cmd>Telescope git_branches<cr>", "Checkout Branch" },
-		C = { "<cmd>Telescope git_commits<cr>", "Checkout Commits" },
-		d = {
-			"<cmd>Gitsigns diffthis HEAD<cr>",
-			"Diff",
-		},
-		g = { "<cmd>Git<cr>", "Git Status" },
-		l = { "<cmd>Git log --graph<cr>", "Commit Logs" },
-		p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-		R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-		s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-		u = {
-			"<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-			"Undo Stage Hunk",
-		},
-		o = { "<cmd>GBrowse<cr>", "Open in Browser" },
+	{
+		"<leader>g",
+		group = "Git",
+		{ "<leader>gb", "<cmd>Git blame<cr>", desc = "Blame" },
+		{ "<leader>gc", "<cmd>Telescope git_branches<cr>", desc = "Checkout Branch" },
+		{ "<leader>gC", "<cmd>Telescope git_commits<cr>", desc = "Checkout Commits" },
+		{ "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff" },
+		{ "<leader>gg", "<cmd>Git<cr>", desc = "Git Status" },
+		{ "<leader>gl", "<cmd>Git log --graph<cr>", desc = "Commit Logs" },
+		{ "<leader>gp", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", desc = "Preview Hunk" },
+		{ "<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", desc = "Reset Hunk" },
+		{ "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", desc = "Reset Buffer" },
+		{ "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", desc = "Stage Hunk" },
+		{ "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", desc = "Undo Stage Hunk" },
+		{ "<leader>go", "<cmd>GBrowse<cr>", desc = "Open in Browser" },
 	},
 
-	h = {
-		name = "Harpoon",
-		["1"] = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "which_key_ignore" },
-		["2"] = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "which_key_ignore" },
-		["3"] = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "which_key_ignore" },
-		["4"] = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "which_key_ignore" },
-		["5"] = { "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", "which_key_ignore" },
-		["6"] = { "<cmd>lua require('harpoon.ui').nav_file(6)<cr>", "which_key_ignore" },
-		["7"] = { "<cmd>lua require('harpoon.ui').nav_file(7)<cr>", "which_key_ignore" },
-		["8"] = { "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", "which_key_ignore" },
-		["9"] = { "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", "which_key_ignore" },
-		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add File" },
-		h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Explorer" },
-		n = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next" },
-		p = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Prev" },
+	{
+		"<leader>h",
+		group = "Harpoon",
+		{ "<leader>h1", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "which_key_ignore" },
+		{ "<leader>h2", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", desc = "which_key_ignore" },
+		{ "<leader>h3", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", desc = "which_key_ignore" },
+		{ "<leader>h4", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", desc = "which_key_ignore" },
+		{ "<leader>h5", "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", desc = "which_key_ignore" },
+		{ "<leader>h6", "<cmd>lua require('harpoon.ui').nav_file(6)<cr>", desc = "which_key_ignore" },
+		{ "<leader>h7", "<cmd>lua require('harpoon.ui').nav_file(7)<cr>", desc = "which_key_ignore" },
+		{ "<leader>h8", "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", desc = "which_key_ignore" },
+		{ "<leader>h9", "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", desc = "which_key_ignore" },
+		{ "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "Add File" },
+		{ "<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Explorer" },
+		{ "<leader>hn", "<cmd>lua require('harpoon.ui').nav_next()<cr>", desc = "Next" },
+		{ "<leader>hp", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", desc = "Prev" },
 	},
 
-	l = {
-		name = "LSP",
-		d = {
-			"<cmd>Telescope diagnostics bufnr=0<cr>",
-			"Document Diagnostics",
-		},
-		D = {
-			"<cmd>Telescope diagnostics<cr>",
-			"Workspace Diagnostics",
-		},
-		f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
-		i = { "<cmd>LspInfo<cr>", "Info" },
-		j = {
-			"<cmd>lua vim.diagnostic.goto_next()<CR>",
-			"Next Diagnostic",
-		},
-		k = {
-			"<cmd>lua vim.diagnostic.goto_prev()<cr>",
-			"Prev Diagnostic",
-		},
-		m = { "<cmd>Mason<cr>", "Mason" },
-		n = { "<cmd>NullLsInfo<cr>", "NullLs" },
-		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-		S = {
-			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-			"Workspace Symbols",
-		},
+	{
+		"<leader>l",
+		group = "LSP",
+		{ "<leader>ld", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document Diagnostics" },
+		{ "<leader>lD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Diagnostics" },
+		{ "<leader>lf", "<cmd>lua vim.lsp.buf.format{async=true}<cr>", desc = "Format" },
+		{ "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
+		{ "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Next Diagnostic" },
+		{ "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "Prev Diagnostic" },
+		{ "<leader>lm", "<cmd>Mason<cr>", desc = "Mason" },
+		{ "<leader>ln", "<cmd>NullLsInfo<cr>", desc = "NullLs" },
+		{ "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename" },
+		{ "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
+		{ "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols" },
 	},
 
-	M = {
-		name = "Plugin Manager",
-		c = { "<cmd>PackerCompile<cr>", "Compile" },
-		i = { "<cmd>PackerInstall<cr>", "Install" },
-		s = { "<cmd>PackerSync<cr>", "Sync" },
-		S = { "<cmd>PackerStatus<cr>", "Status" },
-		u = { "<cmd>PackerUpdate<cr>", "Update" },
+	{
+		"<leader>M",
+		group = "Plugin Manager",
+		{ "<leader>Mc", "<cmd>PackerCompile<cr>", desc = "Compile" },
+		{ "<leader>Mi", "<cmd>PackerInstall<cr>", desc = "Install" },
+		{ "<leader>Ms", "<cmd>PackerSync<cr>", desc = "Sync" },
+		{ "<leader>MS", "<cmd>PackerStatus<cr>", desc = "Status" },
+		{ "<leader>Mu", "<cmd>PackerUpdate<cr>", desc = "Update" },
 	},
 
-	q = {
-		name = "Quit",
-        a = { "<cmd>lua require('defaults').save_and_quit('all')<CR>", "Current All" },
-		o = { "<C-w><C-o>", "Others" },
-        q = { "<cmd>lua require('defaults').save_and_quit('single')<CR>", "Current Window" },
+	{
+		"<leader>q",
+		group = "Quit",
+		{ "<leader>qa", "<cmd>lua require('defaults').save_and_quit('all')<CR>", desc = "Current All" },
+		{ "<leader>qo", "<C-w><C-o>", desc = "Others" },
+		{ "<leader>qq", "<cmd>lua require('defaults').save_and_quit('single')<CR>", desc = "Current Window" },
 	},
 
-	s = {
-		name = "Search",
-		c = { "<cmd>Telescope commands<cr>", "Commands" },
-		f = { "<cmd>Telescope find_files<cr>", "Workspace Files" },
-		F = { "<cmd>lua require('telescope.extra').project_files()<cr>", "Project Files" },
-		h = { "<cmd>Telescope help_tags<cr>", "Help" },
-		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-		m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-		s = { "<cmd>Telescope resume<cr>", "Resume Last Search" },
-		R = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Replace Current Word", silent = false },
-		["'"] = { "<cmd>Telescope registers<cr>", "Registers" },
+	{
+		"<leader>s",
+		group = "Search",
+		{ "<leader>sc", "<cmd>Telescope commands<cr>", desc = "Commands" },
+		{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Workspace Files" },
+		{ "<leader>sF", "<cmd>lua require('telescope.extra').project_files()<cr>", desc = "Project Files" },
+		{ "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help" },
+		{ "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
+		{ "<leader>sm", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
+		{ "<leader>ss", "<cmd>Telescope resume<cr>", desc = "Resume Last Search" },
+		-- {"<leader>sR",  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Replace Current Worddesc = ", silent = false },
+		{ "<leader>s'", "<cmd>sTelescope registers<cr>", desc = "Registers" },
 	},
 
-	t = {
-		name = "Troubleshoot",
-		d = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Add Diagnostic to Quickfix" },
-		l = {
-			name = "Location List",
-			j = { "<cmd>lnext<cr>", "Goto Next" },
-			k = { "<cmd>lprev<cr>", "Goto Prev" },
-			l = { "<cmd>lopen<cr>", "Open Location List" },
-			s = { "<cmd>Telescope loclist<cr>", "Search Location List" },
+	{
+		"<leader>t",
+		group = "Troubleshoot",
+		{ "<leader>td", "<cmd>lua vim.diagnostic.setloclist()<cr>", desc = "Add Diagnostic to Quickfix" },
+		{
+			"<leader>tl",
+			group = "Location List",
+			{ "<leader>tlj", "<cmd>lnext<cr>", desc = "Goto Next" },
+			{ "<leader>tlk", "<cmd>lprev<cr>", desc = "Goto Prev" },
+			{ "<leader>tll", "<cmd>lopen<cr>", desc = "Open Location List" },
+			{ "<leader>tls", "<cmd>Telescope loclist<cr>", desc = "Search Location List" },
 		},
-		q = {
-			name = "Quickfix List",
-			j = { "<cmd>cnext<cr>", "Goto Next" },
-			k = { "<cmd>cprev<cr>", "Goto Prev" },
-			q = { "<cmd>copen<cr>", "Open Quickfix List" },
-			s = { "<cmd>Telescope quickfix<cr>", "Search Quickfix List" },
+		{
+			"<leader>tq",
+			group = "Quickfix List",
+			{ "<leader>tqj", "<cmd>cnext<cr>", desc = "Goto Next" },
+			{ "<leader>tqk", "<cmd>cprev<cr>", desc = "Goto Prev" },
+			{ "<leader>tqq", "<cmd>copen<cr>", desc = "Open Quickfix List" },
+			{ "<leader>tqs", "<cmd>Telescope quickfix<cr>", desc = "Search Quickfix List" },
 		},
-		u = { "<cmd>UndotreeToggle<CR>", "UndoTree" },
+		{ "<leader>tu", "<cmd>UndotreeToggle<CR>", desc = "UndoTree" },
 	},
 }
 
 which_key.setup(setup)
-which_key.register(mappings, opts)
+which_key.add(mappings)
