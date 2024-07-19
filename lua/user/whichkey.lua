@@ -54,11 +54,9 @@ local mappings = {
 	{ "<leader>X", "<cmd>%bd|e#|bd#<CR>", desc = "Close All Buffers" },
 
 	-- Ignore keymaps managed outside of which-key
-	-- ["<space>"] = "which_key_ignore",
-	-- ["p"] = "which_key_ignore",
-	-- ["P"] = "which_key_ignore",
 	{ "<leader>y", hidden = true },
 	{ "<leader>Y", hidden = true },
+	{ "<leader><space>", desc = "EasyMotion" },
 
 	{
 		"<leader>d",
