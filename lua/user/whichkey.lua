@@ -146,7 +146,12 @@ local mappings = {
 		{ "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
 		{ "<leader>sm", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
 		{ "<leader>ss", "<cmd>Telescope resume<cr>", desc = "Resume Last Search" },
-		-- {"<leader>sR",  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Replace Current Worddesc = ", silent = false },
+		{
+			"<leader>sR",
+			[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+			desc = "Replace Current Wordd",
+			silent = false,
+		},
 		{ "<leader>s'", "<cmd>sTelescope registers<cr>", desc = "Registers" },
 	},
 
