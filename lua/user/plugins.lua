@@ -35,7 +35,7 @@ require("packer").startup(function(use)
 			-- Additional lua configuration, makes nvim stuff amazing
 			"folke/neodev.nvim",
 			-- Formatting and Diagnostics
-			"nvimtools/none-ls.nvim",
+            { "nvimtools/none-ls.nvim", commit = "e87c996b097b6516374a3213dd17a8ecebe27777"},
 		},
 	})
 	-- 3. Snippets

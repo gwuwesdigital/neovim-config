@@ -11,7 +11,7 @@ configs.setup({
 		"bash",
 		"c",
 		"cpp",
-		"dockerfile",
+		-- "dockerfile",
 		"go",
 		"lua",
 		"markdown",
@@ -25,7 +25,8 @@ configs.setup({
 		"yaml",
 		"vim",
 	},
-	auto_install = true,
+    sync_install = true,
+	-- auto_install = true,
 	indent = { enable = true },
 	highlight = {
 		enable = true,
