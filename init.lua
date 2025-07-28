@@ -1,22 +1,11 @@
 require("user.autocommands")
-require("user.chafa")
-require("user.cmp")
-require("user.colorscheme")
 require("user.colorizer")
 require("user.comment")
-require("user.gitsigns")
-require("user.indentline")
 require("user.keymaps")
-require("user.lsp")
-require("user.lualine")
-require("user.nvimtree_icons")
-require("user.nvimtree") -- load after "nvimtree_icons" to use its icon configs
 require("user.options")
-require("user.plugins")
-require("user.telescope")
-require("user.treesitter")
 require("user.variables")
-require("user.whichkey")
+
+require("config.lazy")
 
 -- Allow require to look in after/plugin folder
 local home_dir = os.getenv("HOME")

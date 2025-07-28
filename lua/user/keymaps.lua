@@ -1,9 +1,7 @@
 local opts = { noremap = true, silent = true }
 
-local expr_opts = { expr = true, noremap = true, silent = true }
-
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -34,7 +32,7 @@ keymap("", "<C-w>-", "<C-w>K", opts)
 keymap("", "<C-w>|", "<C-w>H", opts)
 
 -- Disable Shift+K to open document
-keymap("n", "K", "<Nop>", opts)
+-- keymap("n", "K", "<Nop>", opts)
 
 -- Disable jumping to the next occurrence when matching current word
 keymap("n", "*", "<cmd>keepjumps normal! mi*`i<cr>", opts)
@@ -61,8 +59,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Remap for dealing with word wrap
-keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", expr_opts)
-keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", expr_opts)
+keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", vim.tbl_deep_extend("force", opts, { expr = true }))
+keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", vim.tbl_deep_extend("force", opts, { expr = true }))
 
 -- Git diffget from left or right
 keymap("n", "gt", "<cmd>diffget //2<CR>", opts)
