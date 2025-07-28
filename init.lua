@@ -1,6 +1,4 @@
 require("user.autocommands")
-require("user.colorizer")
-require("user.comment")
 require("user.keymaps")
 require("user.options")
 require("user.variables")
