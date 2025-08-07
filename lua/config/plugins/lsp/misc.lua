@@ -16,6 +16,4 @@ return {
 			})
 		end,
 	},
-	-- sql editor
-	"nanotee/sqls.nvim",
 }

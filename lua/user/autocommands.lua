@@ -4,7 +4,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	desc = "Press q to quit from certain filetype",
 	command = "nnoremap <silent> <buffer> q :close<CR>",
 	group = _general_settings,
-	pattern = { "qf", "help", "man", "lspinfo", "git", "fugitiveblame", "fugitive", "sqls_output" },
+	pattern = { "qf", "help", "man", "lspinfo", "git", "fugitiveblame", "fugitive" },
 })
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
@@ -99,11 +99,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end, "Toggle Inlay Hints")
 
 		-- Conditionally add language specific keymaps:
-		-- sqls
-		local client = vim.lsp.get_client_by_id(event.data.client_id)
-		if client and client.name == "sqls" then
-			map("<leader><cr>", "<Plug>(sqls-execute-query)", "Execute SQL", { "n", "v" })
-		end
+		-- -- sqls
+		-- local client = vim.lsp.get_client_by_id(event.data.client_id)
+		-- if client and client.name == "sqls" then
+		-- 	map("<leader><cr>", "<Plug>(sqls-execute-query)", "Execute SQL", { "n", "v" })
+		-- end
 
 		-- Navigate between diagnostics
 		map("<leader>lj", "<cmd>lua vim.diagnostic.jump({ count = 1, float = true })<cr>", "Goto Next Diagnostic")

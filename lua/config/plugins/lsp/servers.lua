@@ -56,24 +56,6 @@ return {
 				dockerls = {},
 				jsonls = {},
 				pyright = {},
-				sqls = {
-					settings = {
-						sqls = {
-							lowercaseKeywords = true,
-						},
-					},
-					cmd = (function()
-						local cmd = { vim.fn.stdpath("data") .. "/mason/bin/sqls" }
-						local config_path = vim.loop.cwd() .. "/sqls.yml"
-
-						if vim.fn.filereadable(config_path) == 1 then
-							table.insert(cmd, "--config")
-							table.insert(cmd, config_path)
-						end
-
-						return cmd
-					end)(),
-				},
 				lua_ls = {
 					settings = {
 						Lua = {
