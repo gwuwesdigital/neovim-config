@@ -1,5 +1,7 @@
 local M = {}
 
+-- define custom function to search in a git repo
+-- if .git/ exists or otherwise trigger built-in find_files
 M.project_files = function()
 	local opts = {}
 	vim.fn.system("git rev-parse --is-inside-work-tree")
