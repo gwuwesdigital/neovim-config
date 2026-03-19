@@ -14,7 +14,6 @@ return {
 					}),
 					diagnostics.yamllint,
 					formatting.shfmt,
-					formatting.black.with({ extra_args = { "--fast" } }),
 					formatting.prettierd,
 					formatting.stylua,
 					formatting.sqlfluff.with({

@@ -86,7 +86,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("<leader>lf", function()
 			vim.lsp.buf.format({
 				filter = function(client)
-					return client.name == "null-ls"
+					return client.name == "null-ls" or client.name == "ruff"
 				end,
 				timeout_ms = 3000,
 			})
