@@ -172,6 +172,36 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = "markdown",
 })
 
+-- Treesitter
+local _treesitter = vim.api.nvim_create_augroup("Treesitter", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	desc = "Enable treesitter highlighting, disabled on large files (>500KB)",
+	callback = function(args)
+		local max_filesize = 500 * 1024 -- 500 KB
+		local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(args.buf))
+		if ok and stats and stats.size > max_filesize then
+			return
+		end
+		pcall(vim.treesitter.start)
+	end,
+	group = _treesitter,
+})
+vim.api.nvim_create_autocmd("FileType", {
+	desc = "Enable treesitter-based indentation",
+	callback = function()
+		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+	end,
+	group = _treesitter,
+})
+vim.api.nvim_create_autocmd("FileType", {
+	desc = "Enable treesitter-based folds",
+	callback = function()
+		vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+		vim.wo[0][0].foldmethod = "expr"
+	end,
+	group = _treesitter,
+})
+
 -- Display
 local _auto_resize = vim.api.nvim_create_augroup("AutoResize", { clear = true })
 vim.api.nvim_create_autocmd({ "VimResized" }, {
