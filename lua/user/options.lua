@@ -43,6 +43,9 @@ local options = {
 	splitbelow = true, -- force all horizontal splits to go below current window
 	splitright = true, -- force all vertical splits to go to the right of current window
 
+	-- folding
+	foldlevelstart = 99, -- open all folds when opening a file
+
 	-- conceallevel = 0,                        -- so that `` is visible in markdown files
 	-- fileencoding = "utf-8",                  -- the encoding written to a file
 	-- pumheight = 10,                          -- pop up menu height

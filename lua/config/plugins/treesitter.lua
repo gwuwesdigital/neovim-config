@@ -24,8 +24,26 @@ return {
 				"sql",
 				"yaml",
 				"vim",
+				"vimdoc",
 			})
 		end,
+	},
+
+	-- Restore incremental_selection (removed from nvim-treesitter rewrite)
+	{
+		"MeanderingProgrammer/treesitter-modules.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		opts = {
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					init_selection = "<c-space>",
+					node_incremental = "<c-space>",
+					scope_incremental = false,
+					node_decremental = "<bs>",
+				},
+			},
+		},
 	},
 
 	-- textobjects plugin — check its repo for updated setup instructions
