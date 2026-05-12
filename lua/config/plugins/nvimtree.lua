@@ -18,11 +18,9 @@ return {
 				vim.keymap.set("n", "<C-k>", "", { buffer = bufnr })
 				vim.keymap.del("n", "<C-k>", { buffer = bufnr })
 				vim.keymap.set("n", "<C-x>", "", { buffer = bufnr })
+				vim.keymap.del("n", "<C-x>", { buffer = bufnr })
 				vim.keymap.del("n", "<C-t>", { buffer = bufnr })
 				vim.keymap.set("n", "<C-t>", "", { buffer = bufnr })
-				vim.keymap.del("n", "<C-x>", { buffer = bufnr })
-				vim.keymap.set("n", "<C-]>", "", { buffer = bufnr })
-				vim.keymap.del("n", "<C-]>", { buffer = bufnr })
 				vim.keymap.set("n", "o", "", { buffer = bufnr })
 				vim.keymap.del("n", "o", { buffer = bufnr })
 				vim.keymap.set("n", "O", "", { buffer = bufnr })
@@ -62,26 +60,12 @@ return {
 					root_folder_modifier = ":t",
 					icons = {
 						glyphs = {
-							default = "",
-							symlink = "",
-							folder = {
-								arrow_open = "",
-								arrow_closed = "",
-								default = "",
-								open = "",
-								empty = "",
-								empty_open = "",
-								symlink = "",
-								symlink_open = "",
-							},
 							git = {
 								unstaged = "",
 								staged = "+",
-								unmerged = "",
 								renamed = "»",
 								untracked = "?",
 								deleted = "✘",
-								ignored = "◌",
 							},
 						},
 					},
@@ -89,17 +73,8 @@ return {
 				diagnostics = {
 					enable = true,
 					show_on_dirs = true,
-					icons = {
-						hint = "",
-						info = "",
-						warning = "",
-						error = "",
-					},
 				},
-				view = {
-					width = 35,
-					side = "left",
-				},
+				view = { width = 35 },
 			})
 		end,
 	},

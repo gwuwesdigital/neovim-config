@@ -10,14 +10,14 @@ return {
 				debug = false,
 				sources = {
 					diagnostics.sqlfluff.with({
-						command = vim.fn.expand("~/miniconda3/envs/sqlfluff/bin/sqlfluff"),
+						command = vim.fn.expand("~/miniconda3/envs/dbt/bin/sqlfluff"),
 					}),
 					diagnostics.yamllint,
 					formatting.shfmt,
 					formatting.prettierd,
 					formatting.stylua,
 					formatting.sqlfluff.with({
-						command = vim.fn.expand("~/miniconda3/envs/sqlfluff/bin/sqlfluff"),
+						command = vim.fn.expand("~/miniconda3/envs/dbt/bin/sqlfluff"),
 					}),
 				},
 			})
