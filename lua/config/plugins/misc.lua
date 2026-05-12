@@ -8,7 +8,7 @@ return {
 	"tpope/vim-sleuth",
 	"mbbill/undotree",
 	-- Visual Aid
-	{ "norcalli/nvim-colorizer.lua", opts = {} },
+	{ "catgoose/nvim-colorizer.lua", event = "BufReadPre", opts = {} },
 	{
 		"folke/todo-comments.nvim",
 		event = "VimEnter",
