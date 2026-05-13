@@ -195,6 +195,14 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 vim.api.nvim_create_autocmd("FileType", {
 	desc = "Enable treesitter-based folds",
+	-- Fold commands:
+	-- zc  Close fold under cursor
+	-- zo  Open fold under cursor
+	-- za  Toggle fold
+	-- zM  Close all folds
+	-- zR  Open all folds
+	-- zC  Close all nested folds at cursor
+	-- zO  Open all nested folds at cursor
 	callback = function()
 		vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
 		vim.wo[0][0].foldmethod = "expr"
