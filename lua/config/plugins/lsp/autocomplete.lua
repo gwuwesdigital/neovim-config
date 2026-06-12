@@ -9,28 +9,16 @@ return {
 		},
 	},
 	{
-		"hrsh7th/nvim-cmp",
-		dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path" },
-		opts = function(_, opts)
-			opts.sources = opts.sources or {}
-			table.insert(opts.sources, {
-				name = "lazydev",
-				group_index = 0, -- set group index to 0 to skip loading LuaLS completions
-			})
-		end,
-	},
-	{
 		"saghen/blink.cmp",
 		event = "VimEnter",
 		dependencies = {
 			"saghen/blink.lib",
 			"L3MON4D3/LuaSnip",
-			version = "v2.*",
 		},
 		build = function()
-			-- build the fuzzy matcher, wait up to 60 seconds
+			-- build the fuzzy matcher from source
 			-- you can use `gb` in `:Lazy` to rebuild the plugin as needed
-			require("blink.cmp").build():wait(60000)
+			require("blink.cmp").build():pwait()
 		end,
 
 		---@module 'blink.cmp'
@@ -40,8 +28,10 @@ return {
 				documentation = { auto_show = true },
 			},
 			sources = {
-				-- add lazydev to your completion providers
-				default = { "lsp", "path", "snippets", "buffer", "lazydev" },
+				default = { "lsp", "path", "snippets", "buffer" },
+				per_filetype = {
+					lua = { inherit_defaults = true, "lazydev" },
+				},
 				providers = {
 					lazydev = {
 						name = "LazyDev",
@@ -52,7 +42,7 @@ return {
 				},
 			},
 			snippets = { preset = "luasnip" },
-			fuzzy = { implementation = "lua" },
+			fuzzy = { implementation = "prefer_rust_with_warning" },
 			signature = { enabled = true },
 		},
 	},
